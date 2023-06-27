@@ -1,15 +1,43 @@
-import {} from 'preact'
-import { useState } from 'preact/hooks'
 import './app.css'
 import TranslationProvider from './provider'
 import useTranslation from './hook'
+import { useState } from 'preact/hooks'
+
+
+const itaTranslation = {
+  text: {
+    ciao: "ciaocomestai"
+  }
+}
+
+const engTranslation = {
+  text: {
+    ciao: "hello"
+  }
+}
+
+
 
 export function App() {
 
-  const [count, setCount] = useState(0)
+  const [langs, setLangs] = useState(["ita", "eng"])
+
+  const [selected, setSelected] = useState(langs[0])
 
   return (
-    <TranslationProvider>
+    <TranslationProvider 
+      languages={langs}
+      translations={[
+        itaTranslation.text,
+        engTranslation.text
+      ]}
+      selectedLanguage={selected}
+      >
+
+      <div>
+        {langs.map(lang => <button key={lang} onClick={() => setSelected(lang)}>{lang}</button>)}
+      </div>
+      
       <Data />
     </TranslationProvider>
   )
