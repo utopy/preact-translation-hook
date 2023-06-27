@@ -7,7 +7,9 @@ export default function useTranslation(){
 
 	return (key:string , fallback?:string ) => {
 
-		const translation = context.get(key)
+		// const translation = context.get(key)
+		const translation = context.getTranslation(context.selectedLanguage, key)
+		// const translation = null
 
 		return translation || fallback || key
 
