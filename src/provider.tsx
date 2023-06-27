@@ -1,4 +1,4 @@
-import {h, ComponentProps, ComponentChildren, createContext} from 'preact'
+import {ComponentChildren, createContext} from 'preact'
 import TranslationController from './controllers'
 import type {TranslationType} from './controllers'
 
@@ -9,7 +9,7 @@ type TranslationProviderProps = {
 	selectedLanguage: string
 }
 
-export const TranslationContext =  createContext<TranslationController>( new TranslationController() as any as TranslationContextType)
+export const TranslationContext =  createContext<TranslationController>( new TranslationController() as any)
 
 export default function TranslationProvider(props:TranslationProviderProps) {
 

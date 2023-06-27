@@ -20,7 +20,7 @@ const engTranslation = {
 
 export function App() {
 
-  const [langs, setLangs] = useState(["ita", "eng"])
+  const [langs, _setLangs] = useState(["ita", "eng"])
 
   const [selected, setSelected] = useState(langs[0])
 

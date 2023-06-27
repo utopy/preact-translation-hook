@@ -2,17 +2,17 @@ lockfileVersion: 5.4
 
 specifiers:
   '@preact/preset-vite': ^2.5.0
+  '@types/node': ^20.3.2
   preact: ^10.13.1
   typescript: ^5.0.2
   vite: ^4.3.2
 
-dependencies:
-  preact: 10.14.1
-
 devDependencies:
-  '@preact/preset-vite': 2.5.0_preact@10.14.1+vite@4.3.8
+  '@preact/preset-vite': 2.5.0_preact@10.15.1+vite@4.3.8
+  '@types/node': 20.3.2
+  preact: 10.15.1
   typescript: 5.0.4
-  vite: 4.3.8
+  vite: 4.3.8_@types+node@20.3.2
 
 packages:
 
@@ -494,7 +494,7 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@preact/preset-vite/2.5.0_preact@10.14.1+vite@4.3.8:
+  /@preact/preset-vite/2.5.0_preact@10.15.1+vite@4.3.8:
     resolution: {integrity: sha512-BUhfB2xQ6ex0yPkrT1Z3LbfPzjpJecOZwQ/xJrXGFSZD84+ObyS//41RdEoQCMWsM0t7UHGaujUxUBub7WM1Jw==}
     peerDependencies:
       '@babel/core': 7.x
@@ -502,13 +502,13 @@ packages:
     dependencies:
       '@babel/plugin-transform-react-jsx': 7.21.5
       '@babel/plugin-transform-react-jsx-development': 7.18.6
-      '@prefresh/vite': 2.3.0_preact@10.14.1+vite@4.3.8
+      '@prefresh/vite': 2.3.0_preact@10.15.1+vite@4.3.8
       '@rollup/pluginutils': 4.2.1
       babel-plugin-transform-hook-names: 1.0.2
       debug: 4.3.4
       kolorist: 1.8.0
       resolve: 1.22.2
-      vite: 4.3.8
+      vite: 4.3.8_@types+node@20.3.2
     transitivePeerDependencies:
       - preact
       - supports-color
@@ -518,19 +518,19 @@ packages:
     resolution: {integrity: sha512-joAwpkUDwo7ZqJnufXRGzUb+udk20RBgfA8oLPBh5aJH2LeStmV1luBfeJTztPdyCscC2j2SmZ/tVxFRMIxAEw==}
     dev: true
 
-  /@prefresh/core/1.5.0_preact@10.14.1:
+  /@prefresh/core/1.5.0_preact@10.15.1:
     resolution: {integrity: sha512-C8zcVW77HD/jh47sLJ4vX2//qFrdr6kpBwsLDD84bSl2cvmCamZImnaDvimxrhxcN9oeC+8qnUl92SxQFQY0rg==}
     peerDependencies:
       preact: ^10.0.0
     dependencies:
-      preact: 10.14.1
+      preact: 10.15.1
     dev: true
 
   /@prefresh/utils/1.2.0:
     resolution: {integrity: sha512-KtC/fZw+oqtwOLUFM9UtiitB0JsVX0zLKNyRTA332sqREqSALIIQQxdUCS1P3xR/jT1e2e8/5rwH6gdcMLEmsQ==}
     dev: true
 
-  /@prefresh/vite/2.3.0_preact@10.14.1+vite@4.3.8:
+  /@prefresh/vite/2.3.0_preact@10.15.1+vite@4.3.8:
     resolution: {integrity: sha512-3ekbngrfWYeKGTy54wPCwRx9qBPnMe0lVe33z0rWjW3rgXWTBVZusFLub5QgJYEZNjYjJJBlSv1flekIjpI5Rw==}
     peerDependencies:
       preact: ^10.4.0
@@ -538,11 +538,11 @@ packages:
     dependencies:
       '@babel/core': 7.21.8
       '@prefresh/babel-plugin': 0.5.0
-      '@prefresh/core': 1.5.0_preact@10.14.1
+      '@prefresh/core': 1.5.0_preact@10.15.1
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
-      preact: 10.14.1
-      vite: 4.3.8
+      preact: 10.15.1
+      vite: 4.3.8_@types+node@20.3.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -553,6 +553,10 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    dev: true
+
+  /@types/node/20.3.2:
+    resolution: {integrity: sha512-vOBLVQeCQfIcF/2Y7eKFTqrMnizK5lRNQ7ykML/5RuwVXVWxYkgwS7xbt4B6fKCUPgbSL5FSsjHQpaGQP/dQmw==}
     dev: true
 
   /ansi-styles/3.2.1:
@@ -768,8 +772,9 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /preact/10.14.1:
-    resolution: {integrity: sha512-4XDSnUisk3YFBb3p9WeKeH1mKoxdFUsaXcvxs9wlpYR1wax/TWJVqhwmIWbByX0h7jMEJH6Zc5J6jqc58FKaNQ==}
+  /preact/10.15.1:
+    resolution: {integrity: sha512-qs2ansoQEwzNiV5eAcRT1p1EC/dmEzaATVDJNiB3g2sRDWdA7b7MurXdJjB2+/WQktGWZwxvDrnuRFbWuIr64g==}
+    dev: true
 
   /resolve/1.22.2:
     resolution: {integrity: sha512-Sb+mjNHOULsBv818T40qSPeRiuWLyaGMa5ewydRLFimneixmVy2zdivRl+AF6jaYPC8ERxGDmFSiqui6SfPd+g==}
@@ -832,7 +837,7 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /vite/4.3.8:
+  /vite/4.3.8_@types+node@20.3.2:
     resolution: {integrity: sha512-uYB8PwN7hbMrf4j1xzGDk/lqjsZvCDbt/JC5dyfxc19Pg8kRm14LinK/uq+HSLNswZEoKmweGdtpbnxRtrAXiQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -857,6 +862,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.3.2
       esbuild: 0.17.19
       postcss: 8.4.23
       rollup: 3.22.0

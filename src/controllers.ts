@@ -33,10 +33,6 @@ export default class TranslationController {
     return this._selectedLanguage
   }
 
-  private translationTypeToMap(translation: TranslationType) {
-
-  }
-
   getTranslation(language: string, translationKey: string) {
     return this._translations[language].get(translationKey)
   }

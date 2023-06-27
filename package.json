@@ -1,17 +1,36 @@
 {
-  "name": "translation-hook",
-  "private": true,
-  "version": "0.0.0",
+  "name": "preact-translation-hook",
+  "version": "1.0.0",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "author": "sasha petra | utopico",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/utopy/preact-translation-hook"
+  },
+  "license": "MIT",
+  "main": "./dist/preact-translation-hook.umd.cjs",
+  "module": "./dist/preact-translation-hook.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "dependencies": {
+  "exports": {
+    ".": {
+      "import": "./dist/preact-translation-hook.js",
+      "require": "./dist/preact-translation-hook.umd.js"
+    }
+  },
+  "peerDependencies": {
     "preact": "^10.13.1"
   },
   "devDependencies": {
+    "preact": "^10.13.1",
+    "@types/node": "^20.3.2",
     "@preact/preset-vite": "^2.5.0",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
