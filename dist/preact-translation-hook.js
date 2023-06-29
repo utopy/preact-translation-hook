@@ -127,7 +127,7 @@ class O {
     return s;
   }
   getTranslation(n, _) {
-    return this._translations[n].get(_);
+    return this._translations[n].get(_) ?? null;
   }
   setLanguages(n) {
     this._languages = n;

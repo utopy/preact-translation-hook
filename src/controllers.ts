@@ -80,7 +80,7 @@ export default class TranslationController {
   }
 
   getTranslation(language: string, translationKey: string) {
-    return this._translations[language].get(translationKey)
+    return this._translations[language].get(translationKey) ?? null
   }
 
   setLanguages(languages: string[]) {
