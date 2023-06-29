@@ -1,4 +1,5 @@
-import {ComponentChildren, createContext} from 'preact'
+//@ts-ignore
+import {h, ComponentChildren, createContext} from 'preact'
 import TranslationController from './controllers'
 import type {TranslationType} from './controllers'
 
