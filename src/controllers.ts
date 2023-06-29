@@ -1,7 +1,9 @@
+import { isObject } from "./helpers"
+
 export type TranslationControllerLanguagesKeys = typeof TranslationController.prototype.languages
 
 export type TranslationType = {
-  [key: string]: string | TranslationController
+  [key: string]: string | object
 }
 
 export type TranslationsContainer = {
@@ -33,6 +35,50 @@ export default class TranslationController {
     return this._selectedLanguage
   }
 
+  /*
+  
+    Se l'oggetto è nested (es: 
+    {
+      pippo: "franco", 
+      amici: 
+        {luca: "rossi"}
+      }
+    }
+
+    ritorna un oggetto di tipo:
+    {
+      "pippo":"franco",
+      "amici.luca": "rossi"
+    }
+  
+  */
+
+  flattenTranslationObject(translation: TranslationType, prefix = "") {
+
+    const keys = Object.keys(translation)
+
+    let result: { [key: string]: any } = {}
+
+    for (const key of keys) {
+
+      const newKey = prefix ? `${prefix}.${key}` : key
+
+      const el = translation[key] as any
+
+      if (!isObject(el)) result[newKey] = el
+      else {
+        const flattened = this.flattenTranslationObject(el, newKey)
+
+        result = { ...result, ...flattened }
+      }
+
+
+    }
+
+
+    return result
+  }
+
   getTranslation(language: string, translationKey: string) {
     return this._translations[language].get(translationKey)
   }
@@ -52,7 +98,9 @@ export default class TranslationController {
       const map = new Map()
 
       const language = this._languages[i]
-      const translation = translations[i]
+      const translation = this.flattenTranslationObject(translations[i])
+
+      console.log("TRANSLATION = ", translation)
 
       this._translations[language] = map
 
