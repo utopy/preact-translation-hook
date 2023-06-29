@@ -6,7 +6,9 @@ import { useState } from 'preact/hooks'
 
 const itaTranslation = {
   text: {
-    ciao: "ciaocomestai"
+    ciao: {
+      come : "stai"
+    }
   }
 }
 
@@ -50,7 +52,7 @@ function Data(){
   
   return (
     <div>
-      {t("ciao")}
+      {t("ciao.come")}
     </div>
   )
 }

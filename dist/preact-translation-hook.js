@@ -1,85 +1,88 @@
-var C = Object.defineProperty;
-var F = (n, _, t) => _ in n ? C(n, _, { enumerable: !0, configurable: !0, writable: !0, value: t }) : n[_] = t;
-var c = (n, _, t) => (F(n, typeof _ != "symbol" ? _ + "" : _, t), t);
-import { options as e, createContext as V } from "preact";
-var q, a, h, H, T = 0, w = [], f = [], y = e.__b, E = e.__r, L = e.diffed, p = e.__c, b = e.unmount;
-function k(n, _) {
-  e.__h && e.__h(a, n, T || _), T = 0;
-  var t = a.__H || (a.__H = { __: [], __h: [] });
-  return n >= t.__.length && t.__.push({ __V: f }), t.__[n];
+var w = Object.defineProperty;
+var q = (t, n, _) => n in t ? w(t, n, { enumerable: !0, configurable: !0, writable: !0, value: _ }) : t[n] = _;
+var l = (t, n, _) => (q(t, typeof n != "symbol" ? n + "" : n, _), _);
+import { options as e, createContext as x } from "preact";
+var d, r, h, y, H = 0, k = [], f = [], b = e.__b, L = e.__r, E = e.diffed, p = e.__c, A = e.unmount;
+function C(t, n) {
+  e.__h && e.__h(r, t, H || n), H = 0;
+  var _ = r.__H || (r.__H = { __: [], __h: [] });
+  return t >= _.__.length && _.__.push({ __V: f }), _.__[t];
 }
-function P(n) {
-  var _ = a.context[n.__c], t = k(q++, 9);
-  return t.c = n, _ ? (t.__ == null && (t.__ = !0, _.sub(a)), _.props.value) : n.__;
+function F(t) {
+  var n = r.context[t.__c], _ = C(d++, 9);
+  return _.c = t, n ? (_.__ == null && (_.__ = !0, n.sub(r)), n.props.value) : t.__;
 }
 function N() {
-  for (var n; n = w.shift(); )
-    if (n.__P && n.__H)
+  for (var t; t = k.shift(); )
+    if (t.__P && t.__H)
       try {
-        n.__H.__h.forEach(g), n.__H.__h.forEach(d), n.__H.__h = [];
-      } catch (_) {
-        n.__H.__h = [], e.__e(_, n.__v);
+        t.__H.__h.forEach(g), t.__H.__h.forEach(v), t.__H.__h = [];
+      } catch (n) {
+        t.__H.__h = [], e.__e(n, t.__v);
       }
 }
-e.__b = function(n) {
-  a = null, y && y(n);
-}, e.__r = function(n) {
-  E && E(n), q = 0;
-  var _ = (a = n.__c).__H;
-  _ && (h === a ? (_.__h = [], a.__h = [], _.__.forEach(function(t) {
-    t.__N && (t.__ = t.__N), t.__V = f, t.__N = t.i = void 0;
-  })) : (_.__h.forEach(g), _.__h.forEach(d), _.__h = [])), h = a;
-}, e.diffed = function(n) {
-  L && L(n);
-  var _ = n.__c;
-  _ && _.__H && (_.__H.__h.length && (w.push(_) !== 1 && H === e.requestAnimationFrame || ((H = e.requestAnimationFrame) || j)(N)), _.__H.__.forEach(function(t) {
-    t.i && (t.__H = t.i), t.__V !== f && (t.__ = t.__V), t.i = void 0, t.__V = f;
-  })), h = a = null;
-}, e.__c = function(n, _) {
-  _.some(function(t) {
+e.__b = function(t) {
+  r = null, b && b(t);
+}, e.__r = function(t) {
+  L && L(t), d = 0;
+  var n = (r = t.__c).__H;
+  n && (h === r ? (n.__h = [], r.__h = [], n.__.forEach(function(_) {
+    _.__N && (_.__ = _.__N), _.__V = f, _.__N = _.i = void 0;
+  })) : (n.__h.forEach(g), n.__h.forEach(v), n.__h = [], d = 0)), h = r;
+}, e.diffed = function(t) {
+  E && E(t);
+  var n = t.__c;
+  n && n.__H && (n.__H.__h.length && (k.push(n) !== 1 && y === e.requestAnimationFrame || ((y = e.requestAnimationFrame) || V)(N)), n.__H.__.forEach(function(_) {
+    _.i && (_.__H = _.i), _.__V !== f && (_.__ = _.__V), _.i = void 0, _.__V = f;
+  })), h = r = null;
+}, e.__c = function(t, n) {
+  n.some(function(_) {
     try {
-      t.__h.forEach(g), t.__h = t.__h.filter(function(o) {
-        return !o.__ || d(o);
+      _.__h.forEach(g), _.__h = _.__h.filter(function(o) {
+        return !o.__ || v(o);
       });
     } catch (o) {
-      _.some(function(i) {
-        i.__h && (i.__h = []);
-      }), _ = [], e.__e(o, t.__v);
+      n.some(function(s) {
+        s.__h && (s.__h = []);
+      }), n = [], e.__e(o, _.__v);
     }
-  }), p && p(n, _);
-}, e.unmount = function(n) {
-  b && b(n);
-  var _, t = n.__c;
-  t && t.__H && (t.__H.__.forEach(function(o) {
+  }), p && p(t, n);
+}, e.unmount = function(t) {
+  A && A(t);
+  var n, _ = t.__c;
+  _ && _.__H && (_.__H.__.forEach(function(o) {
     try {
       g(o);
-    } catch (i) {
-      _ = i;
+    } catch (s) {
+      n = s;
     }
-  }), t.__H = void 0, _ && e.__e(_, t.__v));
+  }), _.__H = void 0, n && e.__e(n, _.__v));
 };
-var x = typeof requestAnimationFrame == "function";
-function j(n) {
-  var _, t = function() {
-    clearTimeout(o), x && cancelAnimationFrame(_), setTimeout(n);
-  }, o = setTimeout(t, 100);
-  x && (_ = requestAnimationFrame(t));
+var j = typeof requestAnimationFrame == "function";
+function V(t) {
+  var n, _ = function() {
+    clearTimeout(o), j && cancelAnimationFrame(n), setTimeout(t);
+  }, o = setTimeout(_, 100);
+  j && (n = requestAnimationFrame(_));
 }
-function g(n) {
-  var _ = a, t = n.__c;
-  typeof t == "function" && (n.__c = void 0, t()), a = _;
+function g(t) {
+  var n = r, _ = t.__c;
+  typeof _ == "function" && (t.__c = void 0, _()), r = n;
 }
-function d(n) {
-  var _ = a;
-  n.__c = n.__(), a = _;
+function v(t) {
+  var n = r;
+  t.__c = t.__(), r = n;
 }
-class A {
+function P(t) {
+  return typeof t == "object" && !Array.isArray(t);
+}
+class O {
   constructor() {
-    c(this, "name", "translationController");
-    c(this, "_languages", []);
-    c(this, "_selectedLanguage", "");
+    l(this, "name", "translationController");
+    l(this, "_languages", []);
+    l(this, "_selectedLanguage", "");
     // private _translations: Map<TranslationControllerLanguagesKeys, TranslationType>[] = []
-    c(this, "_translations", {});
+    l(this, "_translations", {});
   }
   get languages() {
     return this._languages;
@@ -90,58 +93,91 @@ class A {
   get selectedLanguage() {
     return this._selectedLanguage;
   }
-  getTranslation(_, t) {
-    return this._translations[_].get(t);
+  /*
+  
+    Se l'oggetto è nested (es: 
+    {
+      pippo: "franco", 
+      amici: 
+        {luca: "rossi"}
+      }
+    }
+     ritorna un oggetto di tipo:
+    {
+      "pippo":"franco",
+      "amici.luca": "rossi"
+    }
+  
+  */
+  flattenTranslationObject(n, _ = "") {
+    const o = Object.keys(n);
+    let s = {};
+    for (const c of o) {
+      const i = _ ? `${_}.${c}` : c, a = n[c];
+      if (!P(a))
+        s[i] = a;
+      else {
+        const u = this.flattenTranslationObject(a, i);
+        s = {
+          ...s,
+          ...u
+        };
+      }
+    }
+    return s;
   }
-  setLanguages(_) {
-    this._languages = _;
+  getTranslation(n, _) {
+    return this._translations[n].get(_);
   }
-  setSelectedLanguage(_) {
-    this._selectedLanguage = _;
+  setLanguages(n) {
+    this._languages = n;
   }
-  setTranslations(_) {
-    this._languages.length != _.length && this.handleErrors("languagesTranslationsDifference");
-    for (let t = 0; t < this._languages.length; t++) {
-      const o = /* @__PURE__ */ new Map(), i = this._languages[t], l = _[t];
-      this._translations[i] = o;
-      const s = Object.keys(l);
-      for (const r of s) {
-        const u = l[r];
-        o.set(r, u);
+  setSelectedLanguage(n) {
+    this._selectedLanguage = n;
+  }
+  setTranslations(n) {
+    this._languages.length != n.length && this.handleErrors("languagesTranslationsDifference");
+    for (let _ = 0; _ < this._languages.length; _++) {
+      const o = /* @__PURE__ */ new Map(), s = this._languages[_], c = this.flattenTranslationObject(n[_]);
+      console.log("TRANSLATION = ", c), this._translations[s] = o;
+      const i = Object.keys(c);
+      for (const a of i) {
+        const u = c[a];
+        o.set(a, u);
       }
     }
   }
-  handleErrors(_) {
-    _ === "languagesTranslationsDifference" && console.error(`The number of languages and translations doesn't match! 
+  handleErrors(n) {
+    n === "languagesTranslationsDifference" && console.error(`The number of languages and translations doesn't match! 
 Cant' proceed with traduction`);
   }
 }
-var D = 0;
-function S(n, _, t, o, i, l) {
-  var s, r, u = {};
-  for (r in _)
-    r == "ref" ? s = _[r] : u[r] = _[r];
-  var m = { type: n, props: u, key: t, ref: s, __k: null, __: null, __b: 0, __e: null, __d: void 0, __c: null, __h: null, constructor: void 0, __v: --D, __source: i, __self: l };
-  if (typeof n == "function" && (s = n.defaultProps))
-    for (r in s)
-      u[r] === void 0 && (u[r] = s[r]);
-  return e.vnode && e.vnode(m), m;
+var S = 0;
+function $(t, n, _, o, s, c) {
+  var i, a, u = {};
+  for (a in n)
+    a == "ref" ? i = n[a] : u[a] = n[a];
+  var T = { type: t, props: u, key: _, ref: i, __k: null, __: null, __b: 0, __e: null, __d: void 0, __c: null, __h: null, constructor: void 0, __v: --S, __source: s, __self: c };
+  if (typeof t == "function" && (i = t.defaultProps))
+    for (a in i)
+      u[a] === void 0 && (u[a] = i[a]);
+  return e.vnode && e.vnode(T), T;
 }
-const v = V(new A());
-function O(n) {
-  console.log(v);
-  const _ = new A();
-  return _.setLanguages(n.languages), _.setTranslations(n.translations), _.setSelectedLanguage(n.selectedLanguage ?? n.languages[0]), S(v.Provider, {
-    value: _,
-    children: n.children
+const m = x(new O());
+function I(t) {
+  console.log(m);
+  const n = new O();
+  return n.setLanguages(t.languages), n.setTranslations(t.translations), n.setSelectedLanguage(t.selectedLanguage ?? t.languages[0]), $(m.Provider, {
+    value: n,
+    children: t.children
   });
 }
-function $() {
-  const n = P(v);
-  return (_, t) => n.getTranslation(n.selectedLanguage, _) || t || _;
+function M() {
+  const t = F(m);
+  return (n, _) => t.getTranslation(t.selectedLanguage, n) || _ || n;
 }
 export {
-  O as TranslationProvider,
-  $ as useTranslation
+  I as TranslationProvider,
+  M as useTranslation
 };
 //# sourceMappingURL=preact-translation-hook.js.map
