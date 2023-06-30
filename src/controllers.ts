@@ -53,7 +53,7 @@ export default class TranslationController {
   
   */
 
-  flattenTranslationObject(translation: TranslationType, prefix = "") {
+  flattenTranslationObject(translation: TranslationType = {}, prefix = "") {
 
     const keys = Object.keys(translation)
 
@@ -92,7 +92,8 @@ export default class TranslationController {
   }
 
   setTranslations(translations: TranslationType[]) {
-    if (this._languages.length != translations.length) this.handleErrors("languagesTranslationsDifference")
+    if (this._languages.length != translations.length) return this.handleErrors("languagesTranslationsDifference")
+
     for (let i = 0; i < this._languages.length; i++) {
 
       const map = new Map()
